@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Microservices Dashboard</h1>
+            <p class="subtitle">Visualização de Usuários e Pedidos</p>
+        </header>
+
+        <div class="content">
+            <section class="card">
+                <div class="card-header">
+                    <h2>👥 Usuários</h2>
+                    <button id="loadUsersBtn" class="btn btn-primary">Carregar Usuários</button>
+                </div>
+                <div id="usersContainer" class="data-container">
+                    <p class="placeholder">Clique em "Carregar Usuários" para visualizar os dados</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <h2>📦 Pedidos</h2>
+                    <div class="order-controls">
+                        <input type="number" id="userIdInput" placeholder="ID do Usuário" min="1">
+                        <button id="loadOrdersBtn" class="btn btn-primary">Buscar Pedidos</button>
+                    </div>
+                </div>
+                <div id="ordersContainer" class="data-container">
+                    <p class="placeholder">Digite um ID de usuário e clique em "Buscar Pedidos"</p>
+                </div>
+            </section>
+
+            <section class="card status-card">
+                <div class="card-header">
+                    <h2>📊 Status do Sistema</h2>
+                </div>
+                <div id="statusContainer" class="status-container">
+                    <div class="status-item">
+                        <span class="status-label">Gateway:</span>
+                        <span id="gatewayStatus" class="status-badge status-unknown">Verificando...</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Microservices Challenge © 2025</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

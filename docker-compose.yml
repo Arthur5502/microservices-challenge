@@ -29,6 +29,17 @@ services:
     networks:
       - backend_net
 
+  frontend_service:
+    build: ./frontend_service
+    container_name: frontend_service
+    restart: always
+    ports:
+      - "3000:80"
+    networks:
+      - backend_net
+    depends_on:
+      - gateway_service
+
 networks:
   backend_net:
     driver: bridge

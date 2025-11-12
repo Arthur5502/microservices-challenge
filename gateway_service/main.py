@@ -1,10 +1,19 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import httpx
 import os
 import uvicorn
 
 app = FastAPI(title="API Gateway")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 USER_SERVICE_URL = os.getenv("USER_SERVICE_URL", "http://users_service:8001")
 ORDER_SERVICE_URL = os.getenv("ORDER_SERVICE_URL", "http://orders_service:8002")

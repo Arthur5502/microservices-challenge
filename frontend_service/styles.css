@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.content {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.card-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.data-container {
+    min-height: 150px;
+}
+
+.placeholder {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+    font-style: italic;
+}
+
+.loading {
+    text-align: center;
+    color: #667eea;
+    padding: 40px;
+    font-weight: 600;
+}
+
+.error {
+    background: #fee;
+    color: #c33;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #c33;
+}
+
+.user-list,
+.order-list {
+    display: grid;
+    gap: 15px;
+}
+
+.user-item,
+.order-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.2s ease;
+}
+
+.user-item:hover,
+.order-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-item h3,
+.order-item h3 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.user-item p,
+.order-item p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.user-item strong,
+.order-item strong {
+    color: #333;
+}
+
+.order-controls {
+    display: flex;
+    gap: 10px;
+}
+
+#userIdInput {
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 150px;
+    transition: border-color 0.3s ease;
+}
+
+#userIdInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.status-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.status-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-online {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-offline {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-unknown {
+    background: #fff3cd;
+    color: #856404;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .order-controls {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #userIdInput {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
