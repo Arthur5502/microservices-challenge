@@ -4,9 +4,9 @@
 
 1. **Clone o repositório e navegue para a pasta raiz do projeto.**
 2. **Execute (Docker e Docker Compose precisam estar instalados):**
-
+```
 docker-compose up --build
-
+```
 3. **Testes de API:**
 - Listar usuários:
   ```
