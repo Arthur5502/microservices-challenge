@@ -18,5 +18,6 @@
   ```
 
 4. **Para desligar:**
-
-docker-compose down
+  ```
+  docker-compose down
+  ```
